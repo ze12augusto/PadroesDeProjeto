@@ -15,10 +15,10 @@ public class PadroesDeProjeto {
     private static void singletow(){
         
         System.out.println("SingleTow");
-        SingleTow singleTow = SingleTow.getInstance();
-        System.out.println("Date:"+singleTow.getData());
-        SingleTow singleTowSecondTime = SingleTow.getInstance();
-        System.out.println("Date:"+singleTowSecondTime.getData());
+        SingleTon singleTon = SingleTon.getInstance();
+        System.out.println("Date:"+singleTon.getData());
+        SingleTon singleTonSecondTime = SingleTon.getInstance();
+        System.out.println("Date:"+singleTonSecondTime.getData());
         System.out.println("----------------------------------\n\n\n");
     }
 }

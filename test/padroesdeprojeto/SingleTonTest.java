@@ -6,11 +6,11 @@ import junit.framework.TestCase;
  *
  * @author a12027227
  */
-public class SingleTowTest extends TestCase {
+public class SingleTonTest extends TestCase {
     
-    private SingleTow instance, instanceSecondTime;
+    private SingleTon instance, instanceSecondTime;
     
-    public SingleTowTest(String testName) {
+    public SingleTonTest(String testName) {
         super(testName);
     }
     
@@ -26,17 +26,17 @@ public class SingleTowTest extends TestCase {
 
     public void testGetInstance() {
         
-        instance = SingleTow.getInstance();
-        instanceSecondTime = SingleTow.getInstance();
+        instance = SingleTon.getInstance();
+        instanceSecondTime = SingleTon.getInstance();
         
         assertEquals(instance, instanceSecondTime);
     }
     
     public void testGetDataDeveDevolverMesmaDataQuandoChamarMetodoGetInstanceSegundaVez(){
         
-        instance = SingleTow.getInstance();
+        instance = SingleTon.getInstance();
         Long date = instance.getData();
-        instanceSecondTime = SingleTow.getInstance();
+        instanceSecondTime = SingleTon.getInstance();
         Long dateSecondTime = instanceSecondTime.getData();
         
         assertEquals(date, dateSecondTime);
