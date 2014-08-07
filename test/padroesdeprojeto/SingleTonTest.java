@@ -1,5 +1,6 @@
 package padroesdeprojeto;
 
+import padroesdeprojeto.singleton.SingleTon;
 import junit.framework.TestCase;
 
 /**

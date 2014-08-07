@@ -1,4 +1,4 @@
-package padroesdeprojeto;
+package padroesdeprojeto.singleton;
 
 /**
  *
