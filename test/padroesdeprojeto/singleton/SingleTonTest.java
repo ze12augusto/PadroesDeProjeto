@@ -1,11 +1,10 @@
 package padroesdeprojeto.singleton;
 
-import padroesdeprojeto.singleton.SingleTon;
 import junit.framework.TestCase;
 
 /**
  *
- * @author a12027227
+ * @author ze12augusto
  */
 public class SingleTonTest extends TestCase {
     

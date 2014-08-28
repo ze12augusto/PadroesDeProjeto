@@ -2,7 +2,7 @@ package padroesdeprojeto.singleton;
 
 /**
  *
- * @author a12027227
+ * @author ze12augusto
  */
 public class SingleTon {
 
