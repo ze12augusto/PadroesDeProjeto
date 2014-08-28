@@ -1,4 +1,4 @@
-package padroesdeprojeto;
+package padroesdeprojeto.singleton;
 
 import padroesdeprojeto.singleton.SingleTon;
 import junit.framework.TestCase;

@@ -5,6 +5,9 @@ import padroesdeprojeto.singleton.SingleTon;
 import padroesdeprojeto.strategy.Human;
 import padroesdeprojeto.strategy.ForkAndKnifeeStrategy;
 import padroesdeprojeto.strategy.HashiStrategy;
+import padroesdeprojeto.template.RelatorioPDF;
+import padroesdeprojeto.template.Relatorio;
+import padroesdeprojeto.template.RelatorioCSV;
 
 /**
  *
@@ -16,6 +19,7 @@ public class PadroesDeProjeto {
         
         singletow();
         strategy();
+        template();
     }
     
     private static void singletow(){
@@ -31,13 +35,26 @@ public class PadroesDeProjeto {
         
         System.out.println("Strategy");
         Human brazilian = new Human(new ForkAndKnifeeStrategy());
-        brazilian.eat();
+        System.out.println( brazilian.eat() );
         Human japanese = new Human(new HashiStrategy());
-        japanese.eat();
+        System.out.println( japanese.eat() );
         brazilian.setStrategy(new HashiStrategy());
-        brazilian.eat();
+        System.out.println( brazilian.eat() );
         japanese.setStrategy(new ForkAndKnifeeStrategy());
-        japanese.eat();
+        System.out.println( japanese.eat() );
+        System.out.println("----------------------------------\n\n\n");
+    }
+    
+    private static void template(){
+        
+        System.out.println("Template");
+        Relatorio relatorio = new RelatorioPDF();
+        System.out.println( relatorio.gerarRelatorio() );
+        
+        relatorio = new RelatorioCSV();
+        System.out.println( relatorio.gerarRelatorio() );
+        
+        System.out.println("----------------------------------\n\n\n");
     }
     
 }
