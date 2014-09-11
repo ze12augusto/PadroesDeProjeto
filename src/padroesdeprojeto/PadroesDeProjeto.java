@@ -7,6 +7,10 @@ import padroesdeprojeto.factory.TradutoInvalidoException;
 import padroesdeprojeto.factory.Tradutor;
 import padroesdeprojeto.factory.TradutorFactory;
 import padroesdeprojeto.singleton.SingleTon;
+import padroesdeprojeto.state.Agua;
+import padroesdeprojeto.state.Lama;
+import padroesdeprojeto.state.Personagem;
+import padroesdeprojeto.state.Terra;
 import padroesdeprojeto.strategy.ForkAndKnifeeStrategy;
 import padroesdeprojeto.strategy.HashiStrategy;
 import padroesdeprojeto.strategy.Human;
@@ -26,6 +30,7 @@ public class PadroesDeProjeto {
         strategy();
         template();
         factory();
+        state();
     }
     
     private static void singletow(){
@@ -84,6 +89,26 @@ public class PadroesDeProjeto {
         } catch (TradutoInvalidoException ex) {
             System.out.println("Erro ao traduzir texto: " + ex.getMessage());
         }
+        System.out.println("----------------------------------\n\n\n");
+    }
+    
+    private static void state(){
+        
+        System.out.println("State");
+       
+        Personagem personagem = new Personagem();
+        personagem.setEstadoPersonagem(new Agua());
+        System.out.println(personagem.pressionouSetaDireita());
+        System.out.println(personagem.pressionarR1());
+        
+        personagem.setEstadoPersonagem(new Terra());
+        System.out.println(personagem.pressionouSetaDireita());
+        System.out.println(personagem.pressionarR1());
+        
+        personagem.setEstadoPersonagem(new Lama());
+        System.out.println(personagem.pressionouSetaDireita());
+        System.out.println(personagem.pressionarR1());
+        
         System.out.println("----------------------------------\n\n\n");
     }
 }
