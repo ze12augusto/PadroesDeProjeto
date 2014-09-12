@@ -1,8 +1,6 @@
 
 package padroesdeprojeto;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import padroesdeprojeto.factory.TradutoInvalidoException;
 import padroesdeprojeto.factory.Tradutor;
 import padroesdeprojeto.factory.TradutorFactory;
@@ -10,7 +8,6 @@ import padroesdeprojeto.singleton.SingleTon;
 import padroesdeprojeto.state.Agua;
 import padroesdeprojeto.state.Lama;
 import padroesdeprojeto.state.Personagem;
-import padroesdeprojeto.state.Terra;
 import padroesdeprojeto.strategy.ForkAndKnifeeStrategy;
 import padroesdeprojeto.strategy.HashiStrategy;
 import padroesdeprojeto.strategy.Human;
@@ -97,17 +94,16 @@ public class PadroesDeProjeto {
         System.out.println("State");
        
         Personagem personagem = new Personagem();
-        personagem.setEstadoPersonagem(new Agua());
-        System.out.println(personagem.pressionouSetaDireita());
-        System.out.println(personagem.pressionarR1());
+        System.out.println( "Estado terra:" + personagem.pressionouSetaDireita());
+        System.out.println( "Estado terra:" + personagem.pressionarR1());
         
-        personagem.setEstadoPersonagem(new Terra());
-        System.out.println(personagem.pressionouSetaDireita());
-        System.out.println(personagem.pressionarR1());
+        personagem.setEstadoPersonagem(new Agua());
+        System.out.println( "Estado agua:" + personagem.pressionouSetaDireita());
+        System.out.println( "Estado agua:" + personagem.pressionarR1());
         
         personagem.setEstadoPersonagem(new Lama());
-        System.out.println(personagem.pressionouSetaDireita());
-        System.out.println(personagem.pressionarR1());
+        System.out.println( "Estado lama:" + personagem.pressionouSetaDireita());
+        System.out.println( "Estado lama:" + personagem.pressionarR1());
         
         System.out.println("----------------------------------\n\n\n");
     }

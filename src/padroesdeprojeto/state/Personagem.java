@@ -8,6 +8,10 @@ public class Personagem {
     
     private EstadoPersonagem estadoPersonagem;
 
+    public Personagem() {
+        estadoPersonagem = new Terra();
+    }
+    
     public EstadoPersonagem getEstadoPersonagem() {
         return estadoPersonagem;
     }
