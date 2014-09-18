@@ -4,6 +4,9 @@ package padroesdeprojeto;
 import padroesdeprojeto.factory.TradutoInvalidoException;
 import padroesdeprojeto.factory.Tradutor;
 import padroesdeprojeto.factory.TradutorFactory;
+import padroesdeprojeto.observer.Observable;
+import padroesdeprojeto.observer.Termometro;
+import padroesdeprojeto.observer.TermometroAnalogico;
 import padroesdeprojeto.singleton.SingleTon;
 import padroesdeprojeto.state.Agua;
 import padroesdeprojeto.state.Lama;
@@ -28,6 +31,7 @@ public class PadroesDeProjeto {
         template();
         factory();
         state();
+        observer();
     }
     
     private static void singletow(){
@@ -104,6 +108,22 @@ public class PadroesDeProjeto {
         personagem.setEstadoPersonagem(new Lama());
         System.out.println( "Estado lama:" + personagem.pressionouSetaDireita());
         System.out.println( "Estado lama:" + personagem.pressionarR1());
+        
+        System.out.println("----------------------------------\n\n\n");
+    }
+    
+    private static void observer(){
+        
+        System.out.println("Observer");
+       
+        Termometro termometro = new Termometro();
+        TermometroAnalogico termometroAnalogico = new TermometroAnalogico();
+        Observable observable = new Observable();
+        observable.addObserver(termometro);
+        observable.addObserver(termometroAnalogico);
+        observable.setTemperatura(0);
+        observable.setTemperatura(1);
+        observable.setTemperatura(2);
         
         System.out.println("----------------------------------\n\n\n");
     }
