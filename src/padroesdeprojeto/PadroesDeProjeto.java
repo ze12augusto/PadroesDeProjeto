@@ -1,6 +1,9 @@
 
 package padroesdeprojeto;
 
+import padroesdeprojeto.bridge.GerarRelatorio;
+import padroesdeprojeto.bridge.RelatorioDOC;
+import padroesdeprojeto.bridge.RelatorioXML;
 import padroesdeprojeto.factory.TradutoInvalidoException;
 import padroesdeprojeto.factory.Tradutor;
 import padroesdeprojeto.factory.TradutorFactory;
@@ -32,6 +35,7 @@ public class PadroesDeProjeto {
         factory();
         state();
         observer();
+        bridge();
     }
     
     private static void singletow(){
@@ -124,6 +128,21 @@ public class PadroesDeProjeto {
         observable.setTemperatura(0);
         observable.setTemperatura(1);
         observable.setTemperatura(2);
+        
+        System.out.println("----------------------------------\n\n\n");
+    }
+    
+    private static void bridge(){
+        
+        System.out.println("Bridge");
+        GerarRelatorio relatorio = new RelatorioDOC();
+        System.out.println( relatorio.gerarRelatorio() );
+        relatorio.setProcessador("criptografado");
+        System.out.println( relatorio.gerarRelatorio() );
+        relatorio = new RelatorioXML();
+        System.out.println( relatorio.gerarRelatorio() );
+        relatorio.setProcessador("criptografado");
+        System.out.println( relatorio.gerarRelatorio() );
         
         System.out.println("----------------------------------\n\n\n");
     }
