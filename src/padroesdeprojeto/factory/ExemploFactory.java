@@ -6,11 +6,11 @@ import padroesdeprojeto.ExemplosPadroes;
  *
  * @author a12027227
  */
-public class ExemploFactory implements ExemplosPadroes{
+public class ExemploFactory extends ExemplosPadroes{
 
     @Override
-    public void execute() {
-        System.out.println("Factory");
+    public void executeExemplo() {
+        
         Tradutor tradutor = null;
         String textoTraduzido = "";
         TradutorFactory tradutorFactory = new TradutorFactory();
@@ -29,7 +29,11 @@ public class ExemploFactory implements ExemplosPadroes{
         } catch (TradutoInvalidoException ex) {
             System.out.println("Erro ao traduzir texto: " + ex.getMessage());
         }
-        System.out.println("----------------------------------\n\n\n");
+    }
+
+    @Override
+    public void executeSoutComNomeExemplo() {
+        System.out.println("Factory");
     }
     
 }

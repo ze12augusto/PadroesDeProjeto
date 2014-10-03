@@ -2,6 +2,7 @@
 package padroesdeprojeto;
 
 import padroesdeprojeto.bridge.ExemploBridge;
+import padroesdeprojeto.facade.ExemploFacade;
 import padroesdeprojeto.factory.ExemploFactory;
 import padroesdeprojeto.observer.ExemploObserver;
 import padroesdeprojeto.singleton.ExemploSingleton;
@@ -38,6 +39,9 @@ public class PadroesDeProjeto {
         exemplosPadroes.execute();
         
         exemplosPadroes = new ExemploBridge();
+        exemplosPadroes.execute();
+        
+        exemplosPadroes = new ExemploFacade();
         exemplosPadroes.execute();
     }
 }

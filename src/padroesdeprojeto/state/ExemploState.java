@@ -6,12 +6,11 @@ import padroesdeprojeto.ExemplosPadroes;
  *
  * @author a12027227
  */
-public class ExemploState implements ExemplosPadroes{
+public class ExemploState extends ExemplosPadroes{
 
     @Override
-    public void execute() {
-        System.out.println("State");
-       
+    public void executeExemplo() {
+        
         Personagem personagem = new Personagem();
         System.out.println( "Estado terra:" + personagem.pressionouSetaDireita());
         System.out.println( "Estado terra:" + personagem.pressionarR1());
@@ -23,8 +22,11 @@ public class ExemploState implements ExemplosPadroes{
         personagem.setEstadoPersonagem(new Lama());
         System.out.println( "Estado lama:" + personagem.pressionouSetaDireita());
         System.out.println( "Estado lama:" + personagem.pressionarR1());
-        
-        System.out.println("----------------------------------\n\n\n");
+    }
+
+    @Override
+    public void executeSoutComNomeExemplo() {
+        System.out.println("State");
     }
     
     

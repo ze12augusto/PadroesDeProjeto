@@ -6,11 +6,11 @@ import padroesdeprojeto.ExemplosPadroes;
  *
  * @author a12027227
  */
-public class ExemploBridge implements ExemplosPadroes{
+public class ExemploBridge extends ExemplosPadroes{
 
     @Override
-    public void execute() {
-        System.out.println("Bridge");
+    public void executeExemplo() {
+        
         GerarRelatorio relatorio = new RelatorioDOC();
         System.out.println( relatorio.gerarRelatorio() );
         relatorio.setProcessador("criptografado");
@@ -19,8 +19,11 @@ public class ExemploBridge implements ExemplosPadroes{
         System.out.println( relatorio.gerarRelatorio() );
         relatorio.setProcessador("criptografado");
         System.out.println( relatorio.gerarRelatorio() );
-        
-        System.out.println("----------------------------------\n\n\n");
+    }
+
+    @Override
+    public void executeSoutComNomeExemplo() {
+        System.out.println("Bridge");
     }
     
 }

@@ -6,11 +6,11 @@ import padroesdeprojeto.ExemplosPadroes;
  *
  * @author a12027227
  */
-public class ExemploStrategy implements ExemplosPadroes{
+public class ExemploStrategy extends ExemplosPadroes{
 
     @Override
-    public void execute() {
-        System.out.println("Strategy");
+    public void executeExemplo() {
+        
         Human brazilian = new Human(new ForkAndKnifeeStrategy());
         System.out.println( brazilian.eat() );
         Human japanese = new Human(new HashiStrategy());
@@ -19,7 +19,11 @@ public class ExemploStrategy implements ExemplosPadroes{
         System.out.println( brazilian.eat() );
         japanese.setStrategy(new ForkAndKnifeeStrategy());
         System.out.println( japanese.eat() );
-        System.out.println("----------------------------------\n\n\n");
+    }
+
+    @Override
+    public void executeSoutComNomeExemplo() {
+        System.out.println("Strategy");
     }
     
 }
