@@ -40,16 +40,16 @@ public class ProdutoCompostoTest extends TestCase {
         assertEquals(massaTomate.getPreco() + batataFrita.getPreco(), compraSegunda.getPreco());
     }
     
-//    public void testGetPrecoDeveriaRetornarPrecoComoSomaCompraSegundaComCompraTerca(){
-//        
-//        produtos.add(massaTomate);
-//        produtos.add(batataFrita);
-//        compraSegunda = new ProdutoComposto(produtos);
-//        
-//        compraSemana.add(compraSegunda);
-//        compraSemana.add(batataFrita);
-//        compraTerca = new ProdutoComposto(compraSemana);
-//        Double precoEsperado = batataFrita.getPreco() +  compraSegunda.getPreco();
-//        assertEquals(precoEsperado,compraTerca.getPreco());
-//    }
+    public void testGetPrecoDeveriaRetornarPrecoComoSomaCompraSegundaComCompraTerca(){
+        
+        produtos.add(massaTomate);
+        produtos.add(batataFrita);
+        compraSegunda = new ProdutoComposto(produtos);
+        
+        compraSemana.add(compraSegunda);
+        compraSemana.add(batataFrita);
+        compraTerca = new ProdutoComposto(compraSemana);
+        Double precoEsperado = batataFrita.getPreco() +  compraSegunda.getPreco();
+        assertEquals(precoEsperado,compraTerca.getPreco());
+    }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 public class ProdutoComposto implements Produto{
 
     private List<Produto> produtos;
-    private Double preco = 0D;
+    private Double preco;
     
     public ProdutoComposto(List<Produto> produtos) {
         this.produtos = produtos;
@@ -18,6 +18,7 @@ public class ProdutoComposto implements Produto{
     @Override
     public Double getPreco() {
         
+        preco = 0D;
         for( Produto produto : produtos ){
             
             preco += produto.getPreco();
