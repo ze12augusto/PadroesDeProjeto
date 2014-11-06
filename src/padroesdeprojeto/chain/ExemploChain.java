@@ -1,5 +1,7 @@
 package padroesdeprojeto.chain;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import padroesdeprojeto.ExemplosPadroes;
 
 /**
@@ -14,12 +16,22 @@ public class ExemploChain extends ExemplosPadroes{
         BuscadorDados remoto = new BuscadorRemoto(null);
         BuscadorDados db = new BuscadorDadosDB(remoto);
         BuscadorDados memoria = new BuscadorMemoria(db);
-        
-        System.out.println("Dados:" + memoria.localizarDados());
-        
-        db.setDados("Dado DB");
-        memoria = new BuscadorMemoria(db);
-        System.out.println("Dados:" + memoria.localizarDados());
+        try {
+            System.out.println("Dados:" + memoria.localizarDados());
+            db.setDados("Dado DB");
+            
+            memoria = new BuscadorMemoria(db);
+            System.out.println("Dados:" + memoria.localizarDados());
+            
+            remoto.setDados(null);
+            db = new BuscadorDadosDB(remoto);
+            db.setDados(null);
+            memoria = new BuscadorMemoria(db);
+            System.out.println("Dados:" + memoria.localizarDados());
+            
+        } catch (DadoNaoEncontradoException ex) {
+            System.out.println("DadoNaoEncontradoException: " + ex.getMessage());
+        }
     }
 
     @Override

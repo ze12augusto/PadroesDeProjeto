@@ -13,12 +13,12 @@ public abstract class BuscadorDados {
         this.chainProximo = chainProximo;
     }
 
-    public String localizarDados() {
+    public String localizarDados() throws DadoNaoEncontradoException {
 
         dados = buscar();
         if (dados == null) {
             if (chainProximo == null) {
-                return "Dado nao encontrado";
+                throw new DadoNaoEncontradoException("Dado nao encontrado");
             }
             dados = chainProximo.localizarDados();
         }
