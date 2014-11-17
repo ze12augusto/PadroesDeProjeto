@@ -1,7 +1,9 @@
 
 package padroesdeprojeto;
 
+import padroesdeprojeto.adapter.ExemploAdapter;
 import padroesdeprojeto.bridge.ExemploBridge;
+import padroesdeprojeto.builder.ExemploBuilder;
 import padroesdeprojeto.chain.ExemploChain;
 import padroesdeprojeto.composite.ExemploComposite;
 import padroesdeprojeto.facade.ExemploFacade;
@@ -50,6 +52,12 @@ public class PadroesDeProjeto {
         exemplosPadroes.execute();
         
         exemplosPadroes = new ExemploChain();
+        exemplosPadroes.execute();
+        
+        exemplosPadroes = new ExemploAdapter();
+        exemplosPadroes.execute();
+        
+        exemplosPadroes = new ExemploBuilder();
         exemplosPadroes.execute();
     }
 }
